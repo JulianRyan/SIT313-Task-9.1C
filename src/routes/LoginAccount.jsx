@@ -3,6 +3,8 @@ import { FormField, Button, Form, Input } from 'semantic-ui-react'
 import React, { useState } from 'react'
 import { signInWithAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../utils/firebase';
 import './LoginAccount.css';
+import { useNavigate } from "react-router-dom";
+
 
 function LoginAccount(props) {
     const [contact, setContact] = useState({
@@ -11,6 +13,8 @@ function LoginAccount(props) {
     })
 
     const { email, password } = contact
+
+    const navigate = useNavigate();
 
     //Julian Ryan
     //test6@gmail.com
@@ -30,10 +34,18 @@ function LoginAccount(props) {
         event.preventDefault();
         try {
             const response = await signInWithAuthUserWithEmailAndPassword(email, password)
-            console.log(response);
+            if (response == null)
+            {
+                alert('Please enter your email and password')
+            }
+            else
+            {
+                navigate("/home");
+            }
         }
         catch (error) {
             console.log("Error in signing in user ", error.message)
+            alert('Username or password is incorrect')
         }
     }
 

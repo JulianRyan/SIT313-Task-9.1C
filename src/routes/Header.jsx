@@ -9,7 +9,7 @@ function Header(props) {
             <div id="search-components" width="100%">
                 DEV@Deakin
                 <Input type="search" class="form-control" id="searchInput" placeholder="Search" />
-                <Button primary href="https://www.google.com.au" target="_blank">Post</Button>
+                <Button primary href="/post">Post</Button>
                 <Button primary href="/login">Login</Button>
             </div>
             <Outlet />

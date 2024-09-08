@@ -1,0 +1,108 @@
+.back-image {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  object-fit: cover;
+  object-position: top;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+}
+
+.card {
+  flex: 1 0 auto;
+}
+
+.card.card-img {
+  height: "20rem"
+}
+
+.articles-tutorial-header {
+  text-align: center;
+  padding: 1em;
+}
+
+.articles-tutorial-button-div {
+  height: 5em;
+  position: relative;
+  padding: 1em;
+}
+
+.tutorials {
+  display: block;
+  align-items: center;
+}
+
+.articles-tutorials-button {
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 0.5em;
+  border-radius: 2em;
+  background-color: lightgray;
+  border-color: lightgray;
+}
+
+
+
+footer a {
+  color: black;
+}
+
+footer {
+  background-color: darkcyan;
+}
+
+.columns-section-one {
+  display: flex;
+}
+
+.columns-section-two {
+  text-align: center;
+}
+
+.columns-section-three {
+  display: flex;
+}
+
+.column-one,
+.column-two,
+.column-three {
+  text-align: center;
+  width: 33%;
+}
+
+
+.subscribe-section {
+  width: 100%;
+  text-align: center;
+}
+
+.subscribe-components {
+  background-color: lightgray;
+  padding: 0.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.subscribe-components input {
+  margin: 0.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.facebook-button {
+  background: #3B5998;
+  color: white;
+  border-radius: 50%;
+}
+
+.twitter-button {
+  background: #55ACEE;
+  color: white;
+  border-radius: 50%;
+}
+
+.instagram-button {
+  background: #125688;
+  color: white;
+  border-radius: 50%;
+}

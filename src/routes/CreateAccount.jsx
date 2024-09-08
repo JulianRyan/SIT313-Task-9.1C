@@ -2,6 +2,7 @@ import { FormField, Button, Form, Input } from 'semantic-ui-react'
 import './CreateAccount.css';
 import React, { useState } from 'react'
 import { createAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../utils/firebase';
+import { useNavigate } from "react-router-dom";
 
 const CreateAccount = (props) => {
     const [contact, setContact] = useState({
@@ -12,7 +13,13 @@ const CreateAccount = (props) => {
         confirmPassword: ''
     })
 
+    //Julian Ryan
+    //test6@gmail.com
+    //ABCEasyAs123
+
     const { displayName, email, password, confirmPassword } = contact
+
+    const navigate = useNavigate();
 
     console.log(contact)
 
@@ -27,18 +34,24 @@ const CreateAccount = (props) => {
     }
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (password !== confirmPassword)
+        if (password !== confirmPassword) {
+            alert('Please enter your credentials in correctly')
+            return;
+        }
+        else if (displayName == '')
         {
-            alert('Passwords do not match!')
+            alert('Name is empty!')
             return;
         }
 
         try {
-            const {user} = await createAuthUserWithEmailAndPassword(email, password)
-            await createUserDocFromAuth (user, {displayName});
+            const { user } = await createAuthUserWithEmailAndPassword(email, password)
+            await createUserDocFromAuth(user, { displayName });
+            navigate("/home");
         }
         catch (error) {
             console.log("Error in creating user ", error.message)
+            alert('Error in creating account. Account may already exist')
         }
     }
 
